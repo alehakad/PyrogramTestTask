@@ -3,6 +3,7 @@ from .connection import engine
 from .models import Base
 from loguru import logger
 
+
 def create_tables():
     try:
         Base.metadata.create_all(bind=engine)
