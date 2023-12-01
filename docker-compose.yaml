@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  bot:
+    build: .
+    command: ./main.py
+    depends_on:
+      - db
+    restart: on-failure
+    env_file:
+      - .env
+  db:
+    image: postgres:15-alpine
+    container_name: postgresql
+    volumes:
+      -  postgres_data:/var/lib/postgresql/data/
+    expose:
+      - 5432
+    environment:
+      - POSTGRES_USER=${DB_USER}
+      - POSTGRES_PASSWORD=${DB_PASSWORD}
+      - POSTGRES_DB=${DB_NAME}
+      - POSTGRES_PORT=${DB_PORT}
+    restart: always
+volumes:
+  postgres_data:

@@ -1,0 +1,11 @@
+async-timeout==4.0.3
+asyncpg==0.29.0
+greenlet==3.0.1
+loguru==0.7.2
+pyaes==1.6.1
+Pyrogram==2.0.106
+PySocks==1.7.1
+python-dotenv==1.0.0
+SQLAlchemy==2.0.23
+TgCrypto==1.2.5
+typing_extensions==4.8.0
